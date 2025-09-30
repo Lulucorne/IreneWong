@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Paradise-bound</title>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="overlay1"></div>
+    <div class="overlay2"></div>
+    <div class="overlay3"></div>
+
+    <div class="container">
+      <h1>Paradise-bound</h1>
+      <p class="quote">"I come from nowhere. I'm headed to Paradise."</p>
+
+      <img src="https://i.imgur.com/FMYXUMf.gif" alt="Profile Picture" class="profile-pic" />
+
+      <div class="section">
+        <h2>About Me</h2>
+        <p>
+          Fear follows me. Blood covers me.<br />
+          But there is no law anymore, no leash.<br />
+          The dead knock at the door, but I am still standing.<br />
+          I will carve my way to Paradise, even if I am the only<br />
+          one left to see it.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Interests</h2>
+        <p>
+          <strong>Music:</strong> Anything that drowns out the groans of the dead.<br />
+          <strong>Movies:</strong> Wolf’s Rain reruns on a broken TV.<br />
+          <strong>Heroes:</strong> Nobody left alive.
+        </p>
+      </div>
+
+      <div class="music-player-container">
+        <h2>Playlist</h2>
+
+        <!-- Cover Art and Info -->
+        <div class="cover-art-container" style="text-align: center; margin-bottom: 10px">
+          <img
+            id="cover-art"
+            src="theme-of-laura.jpg"
+            alt="Cover Art"
+            style="
+              width: 200px;
+              height: 200px;
+              border: 2px solid #660000;
+              border-radius: 5px;
+              box-shadow: 0 0 10px #000;
+            "
+          />
+          <div
+            id="track-info"
+            style="color: #ff9999; margin-top: 10px; font-family: Courier, monospace"
+          >
+            ▶ Theme of Laura – Akira Yamaoka
+          </div>
+          <div id="time-stamp" style="color: #aaa; font-size: 12px; margin-top: 5px">
+            0:00 / 0:00
+          </div>
+        </div>
+
+        <!-- Playlist -->
+        <div class="playlist scrollable" id="playlist" style="max-height: 200px">
+          <!-- Songs will be generated via JS -->
+        </div>
+
+        <!-- Audio Controls -->
+        <div style="margin-top: 10px; text-align: center">
+          <audio id="audio"></audio>
+          <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.1" />
+          <button
+            id="play-pause"
+            style="
+              background: #660000;
+              color: #ff9999;
+              border: none;
+              padding: 5px 10px;
+              cursor: pointer;
+            "
+          >
+            ▶/❚❚
+          </button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Top Friends</h2>
+        <div class="friends">
+          <img src="https://i.imgur.com/RfAfAkQ.jpeg" alt="Missing Friend" />
+          <img src="https://i.imgur.com/JRnhpPn.jpeg" alt="Missing Friend" />
+          <img src="https://i.imgur.com/FfMYGb6.jpeg" alt="Missing Friend" />
+        </div>
+      </div>
+
+      <div class="section scrollable">
+        <h2>Posts</h2>
+        <div class="post">
+          <div class="date">Sept 30, 2007 – 3:04 AM</div>
+          <p>
+            Wolves are supposed to be extinct.<br />
+            Maybe so am I.
+          </p>
+        </div>
+        <div class="post">
+          <div class="date">Sept 28, 2007 – 1:42 AM</div>
+          <p>
+            They say Paradise only opens when the world ends.<br />
+            The world ended. I’m still waiting.
+          </p>
+        </div>
+        <div class="post">
+          <div class="date">Sept 25, 2007 – 11:12 PM</div>
+          <p>
+            The pack always moves together.<br />
+            But I walk alone.
+          </p>
+        </div>
+        <div class="post">
+          <div class="date">Sept 24, 2007 – 6:17 AM</div>
+          <p>
+            The scent of blood carries farther than flowers.<br />
+            Maybe it still leads to Paradise.
+          </p>
+        </div>
+        <div class="post">
+          <div class="date">Sept 21, 2007 – 2:29 AM</div>
+          <p>
+            Wolves wear human skin.<br />
+            I wear blood.
+          </p>
+        </div>
+        <div class="post">
+          <div class="date">Sept 19, 2007 – 4:44 AM</div>
+          <p>
+            He was always looking forward.<br />
+            I only look back.
+          </p>
+        </div>
+        <div class="post">
+          <div class="date">Sept 18, 2007 – 10:08 PM</div>
+          <p>
+            She chased her hunger.<br />
+            I chase silence.
+          </p>
+        </div>
+        <div class="post">
+          <div class="date">Sept 16, 2007 – 12:21 AM</div>
+          <p>
+            Paradise.<br />
+            Is it a place, or just the absence of fear?
+          </p>
+        </div>
+        <div class="post">
+          <div class="date">Sept 13, 2007 – 9:33 PM</div>
+          <p>
+            Wolves follow the Lunar Flower.<br />
+            I only follow the smell of smoke.
+          </p>
+        </div>
+        <div class="post">
+          <div class="date">Sept 11, 2007 – 1:55 AM</div>
+          <p>
+            Paradise is for wolves.<br />
+            What’s left for me?
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Comments</h2>
+        <p><em>[comment deleted]</em></p>
+        <p><em>[comment deleted]</em></p>
+        <p><em>"She was here. Covered in blood. Still smiling." – Anonymous</em></p>
+      </div>
+      <div class="footer">Last Login: August 7, 2007</div>
+    </div>
+  </body>
+</html>
