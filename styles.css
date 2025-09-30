@@ -33,7 +33,6 @@
   background-size: 100% 100%;
 }
 
-/* Second overlay GIF */
 .overlay2 {
   background: url('https://i.postimg.cc/PqKGbkmV/14904129-hd-1920-1080-30fps-ezgif-com-optimize.gif')
     repeat;
@@ -42,7 +41,6 @@
   background-size: 100% 100%;
 }
 
-/* Third overlay GIF */
 .overlay3 {
   background: url('https://i.imgur.com/fnOOi8V.gif') repeat;
   opacity: 0.1;
@@ -50,6 +48,7 @@
   background-size: 100% 100%;
 }
 
+/* Body */
 body {
   margin: 0;
   padding: 0;

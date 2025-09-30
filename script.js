@@ -94,28 +94,27 @@ const songs = [
   },
 ];
 
-// Generate playlist HTML
+// Generate playlist
 songs.forEach((song, index) => {
   const div = document.createElement('div');
   div.classList.add('track');
   if (index === 0) div.classList.add('active');
   div.dataset.index = index;
-  div.textContent = `♡  ${song.title}`; // Only show song title in playlist
+  div.textContent = `♡  ${song.title}`;
   playlistContainer.appendChild(div);
 });
 
-// Initialize volume at 10%
+// Initialize volume
 audio.volume = 0.1;
 volumeSlider.value = audio.volume;
 
-// Play a track by index
+// Play track
 function playTrack(index) {
   const song = songs[index];
   audio.src = song.src;
   coverArt.src = song.cover;
   trackInfo.textContent = `❤︎ ${song.title} – ${song.artist} ❤︎`;
 
-  // Update active class
   document.querySelectorAll('.track').forEach((t) => t.classList.remove('active'));
   document.querySelector(`.track[data-index="${index}"]`).classList.add('active');
 
