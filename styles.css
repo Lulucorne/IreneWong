@@ -48,6 +48,26 @@
   background-size: 100% 100%;
 }
 
+/* Wrapper for profile pic + music player */
+.profile-and-music {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Adjust profile pic inside flex */
+.profile-and-music .profile-pic {
+  flex: 0 0 260px;
+}
+
+/* Compact music player */
+.profile-and-music .music-player-container {
+  flex: 1;
+  max-width: 300px;
+  margin: 0;
+}
+
 /* OOC Info */
 .character-info {
   margin: 50px auto;
