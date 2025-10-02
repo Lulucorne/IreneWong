@@ -2,8 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Paradise-bound</title>
+    <title>Irene Wong</title>
+    <link rel="icon" href="https://i.imgur.com/1HDvR1Q.png" type="image/png" sizes="32x32" />
+    <link href="https://files.catbox.moe/y44ke2.ttf" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <!-- Discord / Social preview -->
+    <meta property="og:title" content="Character Sheet - Irene Wong" />
+    <meta
+      property="og:description"
+      content="You wish you could have this, you Project Zomboid nerd."
+    />
+    <meta property="og:image" content="https://i.imgur.com/HD0VpBe.gif" />
+    <meta property="og:url" content="https://lulucorne.github.io/IreneWong/" />
+    <meta property="og:type" content="website" />
   </head>
   <body>
     <div class="background"></div>
@@ -11,29 +22,47 @@
     <div class="overlay2"></div>
     <div class="overlay3"></div>
 
+    <div id="start-overlay">
+      ♥ CLICK ANYWHERE TO START THE MUSIC ♥<br />
+      You better appreciate it.
+    </div>
+
     <div class="container">
       <h1>Paradise-bound</h1>
       <p class="quote">"I come from nowhere. I'm headed to Paradise."</p>
 
-      <div class="profile-music">
-        <img src="https://i.imgur.com/FMYXUMf.gif" alt="Irene Wong" class="profile-pic" />
+      <div class="profile-and-music">
+        <div class="photo-column">
+          <img src="https://i.imgur.com/FMYXUMf.gif" alt="Irene Wong" class="profile-pic" />
+          <img src="https://i.imgur.com/HD0VpBe.gif" alt="Irene Wong" class="profile-pic" />
+        </div>
 
         <div class="music-player-container">
           <h2>Playlist</h2>
-
           <div class="cover-art-container" style="text-align: center; margin-bottom: 10px">
             <img id="cover-art" src="theme-of-laura.jpg" alt="Cover Art" />
-            <div id="track-info">▶ Theme of Laura – Akira Yamaoka</div>
-            <div id="time-stamp">0:00 / 0:00</div>
+            <div id="track-info"></div>
+            <div id="time-stamp">0:00 / 4:00</div>
+          </div>
+
+          <div class="music-controls">
+            <audio id="audio" autoplay></audio>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.1" />
+            <button id="mute-btn">🕪</button>
+            <button id="play-pause">▶</button>
+            <button id="shuffle-btn">⇆</button>
           </div>
 
           <div class="playlist scrollable" id="playlist"></div>
+        </div>
+      </div>
 
-          <div style="margin-top: 10px; text-align: center">
-            <audio id="audio"></audio>
-            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.1" />
-            <button id="play-pause">▶/❚❚</button>
-          </div>
+      <div class="section">
+        <h2>Top Friends</h2>
+        <div class="friends">
+          <img src="https://i.imgur.com/RfAfAkQ.jpeg" alt="Missing Friend" />
+          <img src="https://i.imgur.com/JRnhpPn.jpeg" alt="Missing Friend" />
+          <img src="https://i.imgur.com/FfMYGb6.jpeg" alt="Missing Friend" />
         </div>
       </div>
 
@@ -45,7 +74,7 @@
           <h3>Basics</h3>
           <ul>
             <li><span>Name:</span> Irene Wong</li>
-            <li><span>Nickname:</span> "Paradise-Bound", "Rey"</li>
+            <li><span>Nickname:</span> "Paradise-Bound" & "Rey"</li>
             <li><span>Age:</span> 26</li>
             <li><span>Place of Birth:</span> Kentucky</li>
             <li><span>Nationality:</span> American</li>
@@ -80,17 +109,17 @@
         </div>
       </section>
 
-      <div class="section">
+      <div class="section about">
         <h2>About Me</h2>
         <p>
           Fear follows me. Blood covers me.<br />
           But there is no law anymore, no leash.<br />
           The dead knock at the door, but I am still standing.<br />
-          I will carve my way to Paradise,<br />even if I am the only one left to see it.
+          I will carve my way to Paradise, even if I am the only one left to see it.
         </p>
       </div>
 
-      <div class="section">
+      <div class="section interests">
         <h2>Interests</h2>
         <p>
           <strong>Music:</strong> Anything that drowns out the groans of the dead.<br />
@@ -99,87 +128,130 @@
         </p>
       </div>
 
-      <div class="section">
-        <h2>Top Friends</h2>
-        <div class="friends">
-          <img src="https://i.imgur.com/RfAfAkQ.jpeg" alt="Missing Friend" />
-          <img src="https://i.imgur.com/JRnhpPn.jpeg" alt="Missing Friend" />
-          <img src="https://i.imgur.com/FfMYGb6.jpeg" alt="Missing Friend" />
+      <div class="section post-info">
+        <div class="section scrollable">
+          <h2>Posts</h2>
+          <div class="post">
+            <div class="date">July 30, 20XX – 3:04 AM</div>
+            <p>Wolves are supposed to be extinct.<br />Maybe so am I.</p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>205</span></button>
+              <button class="dislike-btn">▼ Dislike <span>12</span></button>
+              <button class="comment-btn">✉︎ Comment <span>143</span></button>
+            </div>
+          </div>
+          <div class="post">
+            <div class="date">July 28, 20XX – 1:42 AM</div>
+            <p>
+              They say Paradise only opens when the world ends.<br />
+              The world ended. I’m still waiting.
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>838</span></button>
+              <button class="dislike-btn">▼ Dislike <span>32</span></button>
+              <button class="comment-btn">✉︎ Comment <span>316</span></button>
+            </div>
+          </div>
+          <div class="post">
+            <div class="date">July 25, 20XX – 11:12 PM</div>
+            <p>
+              The pack always moves together.<br />
+              But I walk alone.
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>561</span></button>
+              <button class="dislike-btn">▼ Dislike <span>24</span></button>
+              <button class="comment-btn">✉︎ Comment <span>218</span></button>
+            </div>
+          </div>
+          <div class="post">
+            <div class="date">July 24, 20XX – 6:17 AM</div>
+            <p>
+              The scent of blood carries farther than flowers.<br />
+              Maybe it still leads to Paradise.
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>553</span></button>
+              <button class="dislike-btn">▼ Dislike <span>20</span></button>
+              <button class="comment-btn">✉︎ Comment <span>115</span></button>
+            </div>
+          </div>
+          <div class="post">
+            <div class="date">July 21, 20XX – 2:29 AM</div>
+            <p>
+              Wolves wear human skin.<br />
+              I wear blood.
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>952</span></button>
+              <button class="dislike-btn">▼ Dislike <span>31</span></button>
+              <button class="comment-btn">✉︎ Comment <span>362</span></button>
+            </div>
+          </div>
+          <div class="post">
+            <div class="date">July 19, 20XX – 4:44 AM</div>
+            <p>
+              He was always looking forward.<br />
+              I only look back.
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>496</span></button>
+              <button class="dislike-btn">▼ Dislike <span>13</span></button>
+              <button class="comment-btn">✉︎ Comment <span>203</span></button>
+            </div>
+          </div>
+          <div class="post">
+            <div class="date">July 18, 20XX – 10:08 PM</div>
+            <p>
+              She chased her hunger.<br />
+              I chase silence.
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>778</span></button>
+              <button class="dislike-btn">▼ Dislike <span>36</span></button>
+              <button class="comment-btn">✉︎ Comment <span>114</span></button>
+            </div>
+          </div>
+          <div class="post">
+            <div class="date">July 16, 20XX – 12:21 AM</div>
+            <p>
+              Paradise.<br />
+              Is it a place, or just the absence of fear?
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>365</span></button>
+              <button class="dislike-btn">▼ Dislike <span>66</span></button>
+              <button class="comment-btn">✉︎ Comment <span>253</span></button>
+            </div>
+          </div>
+          <div class="post">
+            <div class="date">July 13, 20XX – 9:33 PM</div>
+            <p>
+              Wolves follow the Lunar Flower.<br />
+              I only follow the smell of smoke.
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>606</span></button>
+              <button class="dislike-btn">▼ Dislike <span>61</span></button>
+              <button class="comment-btn">✉︎ Comment <span>355</span></button>
+            </div>
+          </div>
+          <div class="post">
+            <div class="date">July 11, 20XX – 1:55 AM</div>
+            <p>
+              Paradise is for wolves.<br />
+              What’s left for me?
+            </p>
+            <div class="actions">
+              <button class="like-btn">▲ Like <span>318</span></button>
+              <button class="dislike-btn">▼ Dislike <span>23</span></button>
+              <button class="comment-btn">✉︎ Comment <span>264</span></button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="section scrollable">
-        <h2>Posts</h2>
-        <div class="post">
-          <div class="date">July 30, 20XX – 3:04 AM</div>
-          <p>Wolves are supposed to be extinct.<br />Maybe so am I.</p>
-        </div>
-        <div class="post">
-          <div class="date">July 28, 20XX – 1:42 AM</div>
-          <p>
-            They say Paradise only opens when the world ends.<br />
-            The world ended. I’m still waiting.
-          </p>
-        </div>
-        <div class="post">
-          <div class="date">July 25, 20XX – 11:12 PM</div>
-          <p>
-            The pack always moves together.<br />
-            But I walk alone.
-          </p>
-        </div>
-        <div class="post">
-          <div class="date">July 24, 20XX – 6:17 AM</div>
-          <p>
-            The scent of blood carries farther than flowers.<br />
-            Maybe it still leads to Paradise.
-          </p>
-        </div>
-        <div class="post">
-          <div class="date">July 21, 20XX – 2:29 AM</div>
-          <p>
-            Wolves wear human skin.<br />
-            I wear blood.
-          </p>
-        </div>
-        <div class="post">
-          <div class="date">July 19, 20XX – 4:44 AM</div>
-          <p>
-            He was always looking forward.<br />
-            I only look back.
-          </p>
-        </div>
-        <div class="post">
-          <div class="date">July 18, 20XX – 10:08 PM</div>
-          <p>
-            She chased her hunger.<br />
-            I chase silence.
-          </p>
-        </div>
-        <div class="post">
-          <div class="date">July 16, 20XX – 12:21 AM</div>
-          <p>
-            Paradise.<br />
-            Is it a place, or just the absence of fear?
-          </p>
-        </div>
-        <div class="post">
-          <div class="date">July 13, 20XX – 9:33 PM</div>
-          <p>
-            Wolves follow the Lunar Flower.<br />
-            I only follow the smell of smoke.
-          </p>
-        </div>
-        <div class="post">
-          <div class="date">July 11, 20XX – 1:55 AM</div>
-          <p>
-            Paradise is for wolves.<br />
-            What’s left for me?
-          </p>
-        </div>
-      </div>
-
-      <div class="section">
+      <div class="section comments">
         <h2>Comments</h2>
         <p><em>[comment deleted]</em></p>
         <p><em>[comment deleted]</em></p>

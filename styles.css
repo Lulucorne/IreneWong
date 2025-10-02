@@ -48,30 +48,126 @@
   background-size: 100% 100%;
 }
 
+#start-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(50, 0, 0, 1), rgba(0, 0, 0, 0.9));
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+  padding: 20px;
+  text-shadow: 0 0 5px #ff6666, 0 0 10px #ff4444, 0 0 15px #ff2222, 0 0 20px #ff0000;
+  letter-spacing: 1px;
+}
+
+.floating-word {
+  position: fixed;
+  font-size: 50px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 5px rgba(255, 102, 102, 0.7), 0 0 10px rgba(255, 68, 68, 0.7),
+    0 0 15px rgba(255, 34, 34, 0.7), 0 0 20px rgba(255, 0, 0, 0.7);
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 3s ease, transform 8s linear;
+  white-space: nowrap;
+  font-family: 'Midnight Terror', sans-serif;
+  z-index: 9998;
+}
+
 /* Wrapper for profile pic + music player */
 .profile-and-music {
   display: flex;
-  align-items: flex-start;
   gap: 20px;
+  align-items: stretch;
   margin-bottom: 20px;
 }
 
-/* Adjust profile pic inside flex */
-.profile-and-music .profile-pic {
-  flex: 0 0 260px;
+/* Column for stacked photos */
+.photo-column {
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* Space between the two photos */
+  flex-shrink: 0; /* Keep column from shrinking */
 }
 
 /* Compact music player */
-.profile-and-music .music-player-container {
+.music-player-container {
   flex: 1;
-  max-width: 300px;
-  margin: 0;
+  background: rgba(30, 0, 0, 0.9);
+  border: 2px solid #660000;
+  box-shadow: 0 0 20px #000;
+  padding: 15px;
+  border-radius: 10px;
+  color: #ff6666;
+  font-family: Courier, monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Target the div holding your buttons and slider */
+div.music-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Make buttons the same height and centered content */
+div.music-controls button {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.music-controls input[type='range'] {
+  vertical-align: middle;
+}
+
+button {
+  background: rgba(102, 0, 0, 0.7);
+  border: 2px solid #ff4444;
+  color: #ffcccc;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 4px;
+  text-shadow: 0 0 5px #ff0000, 0 0 10px #ff4444;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: rgba(255, 0, 0, 0.9);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Active state */
+button.active {
+  background: #ff4444;
+  color: #fff;
+  text-shadow: 0 0 8px #ff0000, 0 0 15px #ff7777;
 }
 
 /* OOC Info */
 .character-info {
-  margin: 50px auto;
-  max-width: 700px;
+  margin: 50px 0px;
   padding: 25px;
   background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
   border: 2px solid #660000;
@@ -140,6 +236,27 @@
   margin-right: 5px;
 }
 
+.post-info {
+  margin: 25px auto;
+  padding: 25px;
+  padding-right: 10px;
+  background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+  border: 2px solid #660000;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  font-family: 'Courier New', monospace;
+  color: #ddd;
+}
+
+.post-info h2 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #ffcccc;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
 /* Body */
 body {
   margin: 0;
@@ -164,9 +281,10 @@ h1 {
   font-family: Courier, monospace;
   font-size: 36px;
   text-transform: uppercase;
-  color: #ff4444;
-  text-shadow: 0 0 15px #000;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ff6666, 0 0 10px #ff4444, 0 0 15px #ff2222, 0 0 20px #ff0000;
   margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .quote {
@@ -178,29 +296,103 @@ h1 {
 
 h2 {
   font-size: 20px;
-  color: #ff8888;
+  color: #ffffff;
   border-bottom: 1px solid #660000;
-  padding-bottom: 3px;
-  margin-top: 25px;
+  padding-bottom: 5px;
+  margin-top: 0px;
   margin-bottom: 10px;
+  text-shadow: 0 0 5px #ff6666, 0 0 10px #ff4444, 0 0 15px #ff2222, 0 0 20px #ff0000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
 
 .profile-pic {
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 15px;
-  border: 3px solid #ff0000;
-  filter: contrast(120%) grayscale(40%);
   width: 260px;
   height: 260px;
   object-fit: cover;
   border-radius: 5px;
+  border: 3px solid #ff0000;
+  filter: contrast(120%) grayscale(40%);
   box-shadow: 0 0 10px #000;
 }
 
 .section {
   clear: both;
   margin-top: 25px;
+}
+
+/* Styled About Me and Interests Sections */
+.section.about,
+.section.interests {
+  background: rgba(50, 0, 0, 0.8); /* dark red transparent */
+  border: 2px solid #ff4444; /* bold red accent */
+  border-left: 6px solid #ff8888; /* thicker left accent */
+  border-radius: 10px;
+  padding: 20px 25px;
+  margin-top: 25px;
+  box-shadow: 0 0 15px #000 inset;
+  font-family: 'Courier New', monospace;
+  color: #ffcccc;
+  line-height: 1.6;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.section.about:hover,
+.section.interests:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px #ff4444 inset;
+}
+
+.section.about h2,
+.section.interests h2 {
+  color: #ff6666;
+  text-shadow: 0 0 5px #000;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bolder;
+}
+
+/* Optional: highlight keywords in Interests */
+.section.interests strong {
+  color: #ff4444;
+  text-shadow: 0 0 3px #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bolder;
+}
+
+.section.comments {
+  background: rgba(30, 0, 0, 0.85);
+  border: 2px solid #ff4444;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 25px;
+  box-shadow: 0 0 20px #000 inset;
+  font-family: 'Courier New', monospace;
+  color: #ffcccc;
+}
+
+.section.comments p {
+  background: rgba(0, 0, 0, 0.5);
+  border-left: 4px solid #ff6666;
+  padding: 10px 15px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #000 inset;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.section.comments p:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px #ff4444 inset;
+  background: rgba(50, 0, 0, 0.7);
+}
+
+.section.comments em {
+  font-style: italic;
+  color: #ff9999;
 }
 
 .friends img {
@@ -218,46 +410,77 @@ h2 {
 }
 
 .post {
-  background: rgba(40, 0, 0, 0.7);
+  background: rgba(30, 0, 0, 0.85);
   border: 1px solid #660000;
-  padding: 12px 15px;
-  margin-bottom: 18px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
   font-size: 15px;
-  line-height: 1.5;
-  border-radius: 5px;
-  box-shadow: 0 0 8px #000 inset;
-  transition: background 0.3s;
+  line-height: 1.6;
+  border-radius: 8px;
+  box-shadow: 0 0 12px #000 inset;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
 }
 
 .post:hover {
-  background: rgba(50, 0, 0, 0.85);
+  transform: translateY(-3px);
+  background: rgba(50, 0, 0, 0.95);
+  box-shadow: 0 0 20px #ff4444 inset;
 }
 
 .post .date {
   font-size: 12px;
   color: #aaa;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-style: italic;
+  border-bottom: 1px solid #660000;
+}
+
+.post p {
+  margin: 0;
+  color: #f5cccc;
+}
+
+.post .actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.post .actions button {
+  background: rgba(102, 0, 0, 0.7);
+  border: 1px solid #ff4444;
+  color: #ffcccc;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.post .actions button:hover {
+  background: rgba(255, 0, 0, 0.9);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.post .actions span {
+  margin-left: 5px;
+  font-size: 13px;
+  color: #ff8888;
 }
 
 .footer {
   margin-top: 40px;
-  font-size: 13px;
-  color: #888;
-  text-align: center;
-}
-
-/* Music player */
-.music-player-container {
-  width: 100%;
-  max-width: 800px;
-  background: rgba(30, 0, 0, 0.9);
-  border: 2px solid #660000;
-  box-shadow: 0 0 20px #000;
-  padding: 15px;
-  border-radius: 10px;
+  font-size: 14px;
   color: #ff6666;
-  font-family: Courier, monospace;
-  margin: 20px 0;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  padding-top: 20px;
+  border-top: 2px solid #660000;
+  text-shadow: 0 0 8px #ff0000, 0 0 15px #ff4444;
 }
 
 .music-player-container h2 {
@@ -295,13 +518,15 @@ h2 {
 
 /* Custom volume slider */
 #volume-slider {
-  -webkit-appearance: none;
+  -webkit-appearance: none; /* Safari/Chrome */
+  appearance: none; /* Standard property for modern browsers */
   width: 150px;
   height: 6px;
   background: #660000;
   border-radius: 3px;
   outline: none;
-  margin-right: 10px;
+  margin: 0 6px;
+  vertical-align: middle;
 }
 
 #volume-slider::-webkit-slider-thumb {
@@ -338,11 +563,14 @@ h2 {
 .scrollable {
   max-height: 300px;
   overflow-y: auto;
+  padding-right: 10px; /* Add some space for the scrollbar */
+  box-sizing: content-box; /* Ensures padding doesn’t shrink the content */
 }
 
 /* Optional: smooth scrollbar */
 .scrollable::-webkit-scrollbar {
   width: 8px;
+  right: 5px; /* move it slightly to the left if needed */
 }
 
 .scrollable::-webkit-scrollbar-thumb {
