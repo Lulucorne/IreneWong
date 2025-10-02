@@ -8,7 +8,7 @@
   background: url('assets/background.jpeg') center/cover no-repeat fixed;
   background-size: 100% 100%;
   filter: blur(3px);
-  z-index: -2;
+  z-index: -4;
 }
 
 /* Overlay GIFs */
@@ -82,7 +82,7 @@
   transition: opacity 3s ease, transform 8s linear;
   white-space: nowrap;
   font-family: 'Midnight Terror', sans-serif;
-  z-index: 9998;
+  z-index: -3;
 }
 
 /* Wrapper for profile pic + music player */
