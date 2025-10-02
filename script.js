@@ -296,5 +296,5 @@ function spawnWord() {
   }, 8000);
 }
 
-// Spawn a new word every 1.5 seconds
-setInterval(spawnWord, 1500);
+// Spawn a new word every 0.5 seconds
+setInterval(spawnWord, 500);
