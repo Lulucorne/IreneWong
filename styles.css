@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('https://i.imgur.com/3oMBvjA.jpeg') center/cover no-repeat fixed;
+  background: url('assets/background.jpeg') center/cover no-repeat fixed;
   background-size: 100% 100%;
   filter: blur(3px);
   z-index: -2;
@@ -26,23 +26,21 @@
 }
 
 .overlay1 {
-  background: url('https://i.postimg.cc/vHgDB0W6/14221289-hd-1920-1080-30fps-ezgif-com-optimize.gif')
-    repeat;
+  background: url('assets/overlay1.gif') repeat;
   opacity: 0.55;
   z-index: -2;
   background-size: 100% 100%;
 }
 
 .overlay2 {
-  background: url('https://i.postimg.cc/PqKGbkmV/14904129-hd-1920-1080-30fps-ezgif-com-optimize.gif')
-    repeat;
+  background: url('assets/overlay2.gif') repeat;
   opacity: 0.95;
   z-index: 1;
   background-size: 100% 100%;
 }
 
 .overlay3 {
-  background: url('https://i.imgur.com/fnOOi8V.gif') repeat;
+  background: url('assets/overlay3.gif') repeat;
   opacity: 0.1;
   z-index: -1;
   background-size: 100% 100%;
@@ -99,8 +97,8 @@
 .photo-column {
   display: flex;
   flex-direction: column;
-  gap: 60px; /* Space between the two photos */
-  flex-shrink: 0; /* Keep column from shrinking */
+  gap: 60px;
+  flex-shrink: 0;
 }
 
 /* Compact music player */
@@ -325,9 +323,9 @@ h2 {
 /* Styled About Me and Interests Sections */
 .section.about,
 .section.interests {
-  background: rgba(50, 0, 0, 0.8); /* dark red transparent */
-  border: 2px solid #ff4444; /* bold red accent */
-  border-left: 6px solid #ff8888; /* thicker left accent */
+  background: rgba(50, 0, 0, 0.8);
+  border: 2px solid #ff4444;
+  border-left: 6px solid #ff8888;
   border-radius: 10px;
   padding: 20px 25px;
   margin-top: 25px;
@@ -518,8 +516,8 @@ h2 {
 
 /* Custom volume slider */
 #volume-slider {
-  -webkit-appearance: none; /* Safari/Chrome */
-  appearance: none; /* Standard property for modern browsers */
+  -webkit-appearance: none;
+  appearance: none;
   width: 150px;
   height: 6px;
   background: #660000;
@@ -563,14 +561,14 @@ h2 {
 .scrollable {
   max-height: 300px;
   overflow-y: auto;
-  padding-right: 10px; /* Add some space for the scrollbar */
-  box-sizing: content-box; /* Ensures padding doesn’t shrink the content */
+  padding-right: 10px;
+  box-sizing: content-box;
 }
 
 /* Optional: smooth scrollbar */
 .scrollable::-webkit-scrollbar {
   width: 8px;
-  right: 5px; /* move it slightly to the left if needed */
+  right: 5px;
 }
 
 .scrollable::-webkit-scrollbar-thumb {
