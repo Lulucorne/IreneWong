@@ -393,18 +393,49 @@ h2 {
   color: #ff9999;
 }
 
-.friends img {
+/* Friends grid */
+.friends {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 14px 16px; /* row/column gap */
+  align-items: start;
+}
+
+/* Friend card */
+.friend {
+  margin: 0;
+  text-align: center;
+}
+
+/* Friend image (keeps your vibe) */
+.friend img {
   width: 100px;
   height: 100px;
   border: 2px solid #660000;
-  margin: 5px;
   filter: grayscale(100%) contrast(120%);
   border-radius: 5px;
-  transition: transform 0.2s;
+  transition: transform 0.2s, filter 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 8px #000;
 }
 
-.friends img:hover {
-  transform: scale(1.1);
+/* Hover pop */
+.friend img:hover {
+  transform: scale(1.08);
+  filter: grayscale(30%) contrast(130%);
+  box-shadow: 0 0 12px #ff4444;
+}
+
+/* Friend name */
+.friend figcaption {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #ffcccc;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-shadow: 0 0 4px #000, 0 0 6px #660000; /* subtle glow to match theme */
 }
 
 .post {
