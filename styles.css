@@ -46,6 +46,7 @@
   background-size: 100% 100%;
 }
 
+/* Start Screen */
 #start-overlay {
   position: fixed;
   top: 0;
@@ -68,6 +69,7 @@
   letter-spacing: 1px;
 }
 
+/* Words Background */
 .floating-word {
   position: fixed;
   font-size: 50px;
@@ -115,7 +117,7 @@
   flex-direction: column;
 }
 
-/* Target the div holding your buttons and slider */
+/* Target the div holding buttons and slider */
 div.music-controls {
   display: flex;
   justify-content: center;
@@ -156,7 +158,6 @@ button:hover {
   transform: scale(1.1);
 }
 
-/* Active state */
 button.active {
   background: #ff4444;
   color: #fff;
@@ -320,7 +321,7 @@ h2 {
   margin-top: 25px;
 }
 
-/* Styled About Me and Interests Sections */
+/* About Me and Interests Sections */
 .section.about,
 .section.interests {
   background: rgba(50, 0, 0, 0.8);
@@ -352,7 +353,6 @@ h2 {
   font-weight: bolder;
 }
 
-/* Optional: highlight keywords in Interests */
 .section.interests strong {
   color: #ff4444;
   text-shadow: 0 0 3px #000;
@@ -393,21 +393,19 @@ h2 {
   color: #ff9999;
 }
 
-/* Friends grid */
+/* Friends Section */
 .friends {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  gap: 14px 16px; /* row/column gap */
+  gap: 14px 16px;
   align-items: start;
 }
 
-/* Friend card */
 .friend {
   margin: 0;
   text-align: center;
 }
 
-/* Friend image (keeps your vibe) */
 .friend img {
   width: 100px;
   height: 100px;
@@ -418,14 +416,12 @@ h2 {
   box-shadow: 0 0 8px #000;
 }
 
-/* Hover pop */
 .friend img:hover {
   transform: scale(1.08);
   filter: grayscale(30%) contrast(130%);
   box-shadow: 0 0 12px #ff4444;
 }
 
-/* Friend name */
 .friend figcaption {
   margin-top: 6px;
   font-size: 13px;
@@ -435,9 +431,10 @@ h2 {
   letter-spacing: 2px;
   font-weight: bolder;
   text-transform: uppercase;
-  text-shadow: 0 0 4px #000, 0 0 6px #660000; /* subtle glow to match theme */
+  text-shadow: 0 0 4px #000, 0 0 6px #660000;
 }
 
+/* Post Section */
 .post {
   background: rgba(30, 0, 0, 0.85);
   border: 1px solid #660000;
@@ -588,7 +585,7 @@ h2 {
   border-radius: 4px;
 }
 
-/* Scrollbar for posts/friends if needed */
+/* Scrollbar for posts */
 .scrollable {
   max-height: 300px;
   overflow-y: auto;
@@ -596,7 +593,7 @@ h2 {
   box-sizing: content-box;
 }
 
-/* Optional: smooth scrollbar */
+/* Smooth scrollbar */
 .scrollable::-webkit-scrollbar {
   width: 8px;
   right: 5px;
