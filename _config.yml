@@ -1,0 +1,20 @@
+title: Your Project Title
+# Change this line depending on your repo type
+url: https://lulucorne.github.io
+# If your repo is NOT <username>.github.io, set baseurl to "/<repo-name>"
+# If your repo IS <username>.github.io, leave baseurl as empty string
+baseurl: ''
+
+# Jekyll collection for characters
+collections:
+  characters:
+    output: true
+    permalink: /characters/:name/
+
+# Default layout for every character page
+defaults:
+  - scope:
+      path: ''
+      type: characters
+    values:
+      layout: character
